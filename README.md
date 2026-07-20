@@ -5,5 +5,5 @@ Security related classes compatible with the symfony/security components: core v
 ## Installation
 
 ```bash
-composer require codraw/
+composer require codraw/security
 ```
