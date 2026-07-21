@@ -92,7 +92,7 @@ class JwtAuthenticator extends AbstractAuthenticator
             $this->encoder->decode($token);
 
             return $token;
-        } catch (\UnexpectedValueException) {
+        } catch (\UnexpectedValueException|\DomainException|\InvalidArgumentException) {
             return null;
         }
     }

@@ -28,7 +28,13 @@ class RoleRestrictedAuthenticatorListener implements EventSubscriberInterface
             return;
         }
 
-        $user = $passport->getBadge(UserBadge::class)->getUser();
+        $userBadge = $passport->getBadge(UserBadge::class);
+
+        if (null === $userBadge) {
+            throw new CustomUserMessageAuthenticationException('Access denied.');
+        }
+
+        $user = $userBadge->getUser();
 
         if (!\in_array($badge->getRole(), $this->roleHierarchy->getReachableRoleNames($user->getRoles()), true)) {
             throw new CustomUserMessageAuthenticationException('Access denied.');

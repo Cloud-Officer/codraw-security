@@ -15,7 +15,14 @@
         }
     ],
     "require": {
-        "php": ">=8.5"
+        "php": "^8.5",
+        "firebase/php-jwt": "^6.1",
+        "symfony/event-dispatcher": "^6.4.0",
+        "symfony/http-foundation": "^6.4.0",
+        "symfony/http-kernel": "^6.4.0",
+        "symfony/security-http": "^6.4.0",
+        "symfony/security-core": "^6.4.0",
+        "symfony/translation-contracts": "^2.5 || ^3.0"
     },
     "require-dev": {
         "codraw/core": "^0.39",
@@ -23,13 +30,16 @@
         "codraw/framework-extra-bundle": "^0.39",
         "codraw/messenger": "^0.39",
         "codraw/tester": "^0.39",
-        "firebase/php-jwt": "^6.1",
         "phpunit/phpunit": "^11.3 || ^12.0",
         "symfony/console": "^6.4.0",
-        "symfony/messenger": "^6.4.0",
-        "symfony/security-http": "^6.4.0",
-        "symfony/security-core": "^6.4.0",
-        "symfony/translation-contracts": "^2.5"
+        "symfony/messenger": "^6.4.0"
+    },
+    "suggest": {
+        "codraw/framework-extra-bundle": "To integrate in Symfony",
+        "codraw/messenger": "To use the MessageAuthenticator (auto connect from a message link)",
+        "symfony/console": "To use the SystemConsoleAuthenticatorListener",
+        "symfony/messenger": "To use the SystemMessengerAuthenticatorListener",
+        "symfony/security-bundle": "To use the authenticator factories via the DI integration"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

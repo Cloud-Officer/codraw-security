@@ -21,6 +21,10 @@ class JwtEncoder
 
         if ($this->privateKey) {
             $key = openssl_pkey_get_private($this->privateKey, $this->passphrase);
+
+            if (false === $key) {
+                throw new \RuntimeException('Unable to load the configured private key. Verify the private key and passphrase.');
+            }
         }
 
         return JWT::encode(
