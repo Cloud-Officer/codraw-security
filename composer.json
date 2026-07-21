@@ -1,5 +1,5 @@
 {
-    "name": "draw/security",
+    "name": "codraw/security",
     "description": "Security related class compatible with symfony/security* component",
     "license": "MIT",
     "type": "library",
@@ -18,11 +18,11 @@
         "php": ">=8.5"
     },
     "require-dev": {
-        "draw/core": "^0.39",
-        "draw/dependency-injection": "^0.39",
-        "draw/framework-extra-bundle": "^0.39",
-        "draw/messenger": "^0.39",
-        "draw/tester": "^0.39",
+        "codraw/core": "^0.39",
+        "codraw/dependency-injection": "^0.39",
+        "codraw/framework-extra-bundle": "^0.39",
+        "codraw/messenger": "^0.39",
+        "codraw/tester": "^0.39",
         "firebase/php-jwt": "^6.1",
         "phpunit/phpunit": "^11.3 || ^12.0",
         "symfony/console": "^6.4.0",
@@ -42,5 +42,8 @@
         "branch-alias": {
             "dev-master": "0.38-dev"
         }
+    },
+    "replace": {
+        "draw/security": "self.version"
     }
 }
